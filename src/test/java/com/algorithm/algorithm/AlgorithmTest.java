@@ -51,39 +51,7 @@ public class AlgorithmTest {
         assertArrayEquals(new int[]{10}, array); // Expected: no change
     }
     
-    
-//    @Test
-//    void testBinarySearch() {
-//        int[] array = {1, 2, 3, 4, 5, 6, 7};
-//        int result = BinarySearch.search(array, 4);
-//        assertEquals(3, result); // Expected index of 4
-//    }
-//    @Test
-//    void testBinarySearchEmptyArray() {
-//        int[] array = {};
-//        assertEquals(-1, BinarySearch.search(array, 5)); // Expected: not found
-//    }
-//
-//    @Test
-//    void testBinarySearchSingleElement() {
-//        int[] array = {5};
-//        assertEquals(0, BinarySearch.search(array, 5)); // Expected: found at index 0
-//    }
-//
-//    @Test
-//    void testBinarySearchElementNotFound() {
-//        int[] array = {1, 2, 3, 4, 5};
-//        assertEquals(-1, BinarySearch.search(array, 6)); // Expected: not found
-//    }
-//    @Test
-//    void testBinarySearchTargetLessThanMid() {
-//        int[] array = {1, 3, 5, 7, 9, 11};
-//        int target = 4; // Giá trị mục tiêu nhỏ hơn phần tử giữa (5)
-//        int result = BinarySearch.search(array, target);
-//        assertEquals(-1, result); // Expected: Giá trị không có trong mảng
-//    }
-//   
-    
+
     // Test Fibonacci
     @Test
     void testFibonacci() {
