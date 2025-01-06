@@ -27,28 +27,28 @@ public class AlgorithmTest {
     void testBubbleSortSortedArray() {
         int[] array = {1, 2, 3, 4, 5};
         Algorithm.Bubblesort(array);
-        assertArrayEquals(new int[]{1, 2, 3, 4, 5}, array); // Expected: already sorted
+        assertArrayEquals(new int[]{1, 2, 3, 4, 5}, array); 
     }
 
     @Test
     void testBubbleSortArrayWithDuplicates() {
         int[] array = {5, 3, 5, 1, 2};
         Algorithm.Bubblesort(array);
-        assertArrayEquals(new int[]{1, 2, 3, 5, 5}, array); // Expected: sorted with duplicates
+        assertArrayEquals(new int[]{1, 2, 3, 5, 5}, array); 
     }
 
     @Test
     void testBubbleSortEmptyArray() {
         int[] array = {};
         Algorithm.Bubblesort(array);
-        assertArrayEquals(new int[]{}, array); // Expected: empty array
+        assertArrayEquals(new int[]{}, array); 
     }
 
     @Test
     void testBubbleSortSingleElementArray() {
         int[] array = {10};
         Algorithm.Bubblesort(array);
-        assertArrayEquals(new int[]{10}, array); // Expected: no change
+        assertArrayEquals(new int[]{10}, array); 
     }
     
 
@@ -90,7 +90,12 @@ public class AlgorithmTest {
     }
 
     @Test
-    void testPrimeCheckNegativeAndZero() {
+    void testPrimeCheckNegative() {
         assertFalse(isPrime(-1)); 
+    }
+    
+    @Test
+    void testPrimeCheckZero() {
+        assertFalse(isPrime(0)); 
     }
 }
