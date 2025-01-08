@@ -1,4 +1,6 @@
 # algorithms-junit-test
+## Overview 
+This Java class, `AlgorithmTest`, contains a series of unit tests for the algorithms implemented in the `Algorithm` class. The tests are written using the JUnit framework. The class focuses on three main algorithms: Bubble Sort, Fibonacci Sequence, and Prime Number Checking.
 ## Test Cases
 This section includes a detailed set of unit tests designed to validate the functionality and robustness of the implemented algorithms. The test cases cover various scenarios for sorting, Fibonacci sequence calculation, and prime number checking. Each test is created using JUnit 5, ensuring that the expected behaviour is accurately verified against the actual results.
 The following are the key aspects tested:
@@ -119,7 +121,7 @@ This project uses Maven to manage its dependencies, ensuring an organized and ef
 </plugins>
 ```
 ## Results
-At the beginning, I wrote a limited number of test cases to perform basic checks for the BubbleSort, Fibonacci, and Prime Number algorithms. The results showed that the code coverage was not optimal, as illustrated in the first image:
+Initially, I wrote a limited number of test cases to perform basic checks for the BubbleSort, Fibonacci, and Prime Number algorithms. The results showed that the code coverage was not optimal, as illustrated in the first image:
 - FibonacciCalculate: Instruction coverage was only 19%, and branch coverage was 25%.
 - isPrime: Performed better with 91% instruction coverage and 83% branch coverage.
 - BubbleSort: Achieved 100% coverage due to its straightforward implementation.
@@ -135,4 +137,4 @@ To improve testing quality and ensure all edge cases were covered, I wrote addit
 mvn clean test jacoco:report
 ```
 ## Link ChatGPT
-This is the ChatGPT conversation link where an example of running JUnit tests was provided. You can review it to better understand the implementation details and testing process. [ChatGPT Example on JUnit Testing](https://chatgpt.com/share/677beb00-ccdc-8005-835a-46b5f6696ac7)
+This is the ChatGPT conversation link where an example of running JUnit tests was provided. You can review it to understand the implementation details and testing process better. [ChatGPT Example on JUnit Testing](https://chatgpt.com/share/677beb00-ccdc-8005-835a-46b5f6696ac7)
