@@ -29,7 +29,7 @@ public class AlgorithmTest {
         Algorithm.Bubblesort(array);
         assertArrayEquals(new int[]{1, 2, 3, 4, 5}, array); 
     }
-
+    
     @Test
     void testBubbleSortArrayWithDuplicates() {
         int[] array = {5, 3, 5, 1, 2};
@@ -50,8 +50,22 @@ public class AlgorithmTest {
         Algorithm.Bubblesort(array);
         assertArrayEquals(new int[]{10}, array); 
     }
-    
-
+    @Test
+    void testBubbleSortWithNegativeNumbers() {
+        int[] arr = {-5, -1, -3, -2, -4};
+        int[] expected = {-5, -4, -3, -2, -1};
+        Algorithm.Bubblesort(arr);
+        assertArrayEquals(expected, arr);
+    }
+    @Test
+    void testBubbleSortWithLargeInput() {
+        int[] arr = new int[1000000];
+        Arrays.setAll(arr, i -> (int)(Math.random() * 1000000));
+        int[] sortedArr = arr.clone();
+        Arrays.sort(sortedArr);
+        Algorithm.Bubblesort(arr);
+        assertArrayEquals(sortedArr, arr);
+    }
     // Test Fibonacci
     @Test
     void testFibonacci() {
@@ -61,12 +75,10 @@ public class AlgorithmTest {
     void testFibonacciZero() {
         assertEquals(0, Fibonaccicalculate(0)); 
     }
-
     @Test
     void testFibonacciOne() {
         assertEquals(1, Fibonaccicalculate(1)); 
-    }
-
+    }   
     @Test
     void testFibonacciLarge() {
         assertEquals(55, Fibonaccicalculate(10)); 
@@ -77,25 +89,26 @@ public class AlgorithmTest {
     @Test
     void testIsPrime() {
         assertTrue(isPrime(7));
-        assertFalse(isPrime(4));
     }
     @Test
-    void testPrimeCheckSmallPrime() {
+    void testPrimeCheckSmallestPrime() {
         assertTrue(isPrime(2)); 
     }
-
     @Test
     void testPrimeCheckNonPrime() {
         assertFalse(isPrime(4)); 
     }
-
     @Test
     void testPrimeCheckNegative() {
         assertFalse(isPrime(-1)); 
     }
-    
+   
     @Test
     void testPrimeCheckZero() {
         assertFalse(isPrime(0)); 
+    }
+    @Test
+    void testPrimeCheckWithLargeNumber() {
+        assertTrue(isPrime(9999991)); 
     }
 }
