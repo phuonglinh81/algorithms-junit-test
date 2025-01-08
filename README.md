@@ -13,60 +13,77 @@ public class AlgorithmTest {
     @Test
     void testBubbleSort() {
         int[] array = {5, 2, 9, 1, 6};
-        Algorithm.Bubblesort(array);
+        Algorithm.bubbleSort(array);
         assertArrayEquals(new int[]{1, 2, 5, 6, 9}, array);
     }
     @Test
     void testBubbleSortSortedArray() {
         int[] array = {1, 2, 3, 4, 5};
-        Algorithm.Bubblesort(array);
+        Algorithm.bubbleSort(array);
         assertArrayEquals(new int[]{1, 2, 3, 4, 5}, array); 
-    }
+    }    
     @Test
     void testBubbleSortArrayWithDuplicates() {
         int[] array = {5, 3, 5, 1, 2};
-        Algorithm.Bubblesort(array);
+        Algorithm.bubbleSort(array);
         assertArrayEquals(new int[]{1, 2, 3, 5, 5}, array); 
     }
     @Test
     void testBubbleSortEmptyArray() {
         int[] array = {};
-        Algorithm.Bubblesort(array);
+        Algorithm.bubbleSort(array);
         assertArrayEquals(new int[]{}, array); 
     }
     @Test
     void testBubbleSortSingleElementArray() {
         int[] array = {10};
-        Algorithm.Bubblesort(array);
+        Algorithm.bubbleSort(array);
         assertArrayEquals(new int[]{10}, array); 
     }
-    
+    @Test
+    void testBubbleSortWithNegativeNumbers() {
+        int[] arr = {-5, -1, -3, -2, -4};
+        int[] expected = {-5, -4, -3, -2, -1};
+        Algorithm.bubbleSort(arr);
+        assertArrayEquals(expected, arr);
+    }
+    @Test
+    void testBubbleSortWithLargeInput() {
+        int[] arr = new int[1000];
+        Arrays.setAll(arr, i -> (int)(Math.random() * 1000));
+        int[] sortedArr = arr.clone();
+        Arrays.sort(sortedArr);
+        Algorithm.bubbleSort(arr);
+        assertArrayEquals(sortedArr, arr);
+    }
     // Test Fibonacci
     @Test
     void testFibonacci() {
-        assertEquals(8, Fibonaccicalculate(6));
+        assertEquals(8, calculateFibonacci(6));
     }
     @Test
     void testFibonacciZero() {
-        assertEquals(0, Fibonaccicalculate(0)); 
+        assertEquals(0, calculateFibonacci(0)); 
     }
     @Test
     void testFibonacciOne() {
-        assertEquals(1, Fibonaccicalculate(1)); 
-    }    
+        assertEquals(1, calculateFibonacci(1)); 
+    }   
     @Test
     void testFibonacciLarge() {
-        assertEquals(55, Fibonaccicalculate(10)); 
+        assertEquals(832040, calculateFibonacci(30)); 
     }
-        
+    @Test
+    void testFibonacciWithNegativeNumber() {
+        assertThrows(IllegalArgumentException.class, () -> calculateFibonacci(-1));
+    }      
     // Test Prime Check
     @Test
     void testIsPrime() {
         assertTrue(isPrime(7));
-        assertFalse(isPrime(4));
     }
     @Test
-    void testPrimeCheckSmallPrime() {
+    void testPrimeCheckSmallestPrime() {
         assertTrue(isPrime(2)); 
     }
     @Test
@@ -76,10 +93,14 @@ public class AlgorithmTest {
     @Test
     void testPrimeCheckNegative() {
         assertFalse(isPrime(-1)); 
-    }    
+    }   
     @Test
     void testPrimeCheckZero() {
         assertFalse(isPrime(0)); 
+    }
+    @Test
+    void testPrimeCheckWithLargeNumber() {
+        assertTrue(isPrime(9999991)); 
     }
 }
 ```
@@ -130,7 +151,7 @@ Initially, I wrote a limited number of test cases to perform basic checks for th
 ![image](https://github.com/user-attachments/assets/3d8b8ba5-889e-4133-b623-69931c06351a)
 To improve testing quality and ensure all edge cases were covered, I wrote additional test cases to handle scenarios such as empty arrays, the smallest prime number, and boundary values for Fibonacci. After adding these test cases, the code coverage improved to 100% for all three algorithms, as shown in the image:
 
-![image](https://github.com/user-attachments/assets/35aaa3fb-da9d-463c-8060-a9e0b140daf6)
+![image](https://github.com/user-attachments/assets/f6e81351-615d-4698-b513-4d4bf06a709b)
 ![image](https://github.com/user-attachments/assets/9ccd9c3d-4066-4a7b-9d82-4333593fee1d)
 ## How to Run
 ```bash
