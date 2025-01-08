@@ -88,19 +88,19 @@ This project uses Maven to manage its dependencies, ensuring an organized and ef
 - JUnit Jupiter is the testing framework used to write and execute the unit tests in this project. It is part of the JUnit 5 suite, which provides robust and modern testing features.
 ```xml
 <dependencies>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>5.10.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.10.3</version>
-            <type>jar</type>
-        </dependency>
-    </dependencies>
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter</artifactId>
+        <version>5.10.0</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-api</artifactId>
+        <version>5.10.3</version>
+        <type>jar</type>
+    </dependency>
+</dependencies>
 ```
 - The JaCoCo Maven Plugin is integrated into this project to provide detailed code coverage reports. These reports help evaluate how much of the source code is covered by the unit tests, highlighting untested areas for improvement. This plugin automatically generates a report after tests are executed.
 ```xml
