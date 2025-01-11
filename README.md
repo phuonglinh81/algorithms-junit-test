@@ -159,3 +159,4 @@ mvn clean test jacoco:report
 ```
 ## Link ChatGPT
 This is the ChatGPT conversation link where an example of running JUnit tests was provided. You can review it to understand the implementation details and testing process better. [ChatGPT Example on JUnit Testing](https://chatgpt.com/share/677beb00-ccdc-8005-835a-46b5f6696ac7)
+Additionally, I also asked ChatGPT to evaluate and grade my testing exercises. I made adjustments based on the suggestions provided to improve the results of my assignments. Here is the link to my ChatGPT conversation. [ChatGPT evaluate and grade](https://chatgpt.com/share/67824d07-cbf0-8005-8b3b-c5c23376b4ea)
