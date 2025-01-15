@@ -18,8 +18,9 @@ import java.util.Set;
  */
 public class Algorithm {
     private Algorithm() {}
-    //BubbleSort
-    public static void Bubblesort(int[] array) {
+
+    // Bubble Sort
+    public static void bubbleSort(int[] array) {
         int n = array.length;
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - 1 - i; j++) {
@@ -46,8 +47,11 @@ public class Algorithm {
         return true;
     }
 
-    // Fibonacci
-    public static int Fibonaccicalculate(int n) {
+    // Fibonacci Calculation
+    public static int fibonacciCalculate(int n) {
+        if (n < 0) {
+            throw new IllegalArgumentException("Input cannot be negative");
+        }
         if (n <= 1) {
             return n;
         }

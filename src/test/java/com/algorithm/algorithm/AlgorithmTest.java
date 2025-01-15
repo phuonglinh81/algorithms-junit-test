@@ -4,7 +4,7 @@
  */
 package com.algorithm.algorithm;
 import static com.algorithm.algorithm.Algorithm.bubbleSort;
-import static com.algorithm.algorithm.Algorithm.calculateFibonacci;
+import static com.algorithm.algorithm.Algorithm.fibonacciCalculate;
 import static com.algorithm.algorithm.Algorithm.isPrime;
 import java.util.Arrays;
 import java.util.List;
@@ -15,103 +15,114 @@ import org.junit.jupiter.api.Test;
  * @author phanp
  */
 public class AlgorithmTest {
-    // Test BubbleSort
+    // Test Bubble Sort
     @Test
-    void testBubbleSort() {
+    void testBubbleSortWithUnsortedArray() {
         int[] array = {5, 2, 9, 1, 6};
         Algorithm.bubbleSort(array);
         assertArrayEquals(new int[]{1, 2, 5, 6, 9}, array);
     }
 
     @Test
-    void testBubbleSortSortedArray() {
+    void testBubbleSortWithSortedArray() {
         int[] array = {1, 2, 3, 4, 5};
         Algorithm.bubbleSort(array);
-        assertArrayEquals(new int[]{1, 2, 3, 4, 5}, array); 
+        assertArrayEquals(new int[]{1, 2, 3, 4, 5}, array);
     }
-    
+
     @Test
-    void testBubbleSortArrayWithDuplicates() {
+    void testBubbleSortWithDuplicateValues() {
         int[] array = {5, 3, 5, 1, 2};
         Algorithm.bubbleSort(array);
-        assertArrayEquals(new int[]{1, 2, 3, 5, 5}, array); 
+        assertArrayEquals(new int[]{1, 2, 3, 5, 5}, array);
     }
 
     @Test
-    void testBubbleSortEmptyArray() {
+    void testBubbleSortWithEmptyArray() {
         int[] array = {};
         Algorithm.bubbleSort(array);
-        assertArrayEquals(new int[]{}, array); 
+        assertArrayEquals(new int[]{}, array);
     }
 
     @Test
-    void testBubbleSortSingleElementArray() {
+    void testBubbleSortWithSingleElement() {
         int[] array = {10};
         Algorithm.bubbleSort(array);
-        assertArrayEquals(new int[]{10}, array); 
+        assertArrayEquals(new int[]{10}, array);
     }
+
     @Test
     void testBubbleSortWithNegativeNumbers() {
-        int[] arr = {-5, -1, -3, -2, -4};
+        int[] array = {-5, -1, -3, -2, -4};
         int[] expected = {-5, -4, -3, -2, -1};
-        Algorithm.bubbleSort(arr);
-        assertArrayEquals(expected, arr);
+        Algorithm.bubbleSort(array);
+        assertArrayEquals(expected, array);
     }
+
     @Test
     void testBubbleSortWithLargeInput() {
-        int[] arr = new int[1000];
-        Arrays.setAll(arr, i -> (int)(Math.random() * 1000));
-        int[] sortedArr = arr.clone();
-        Arrays.sort(sortedArr);
-        Algorithm.bubbleSort(arr);
-        assertArrayEquals(sortedArr, arr);
+        int[] array = new int[1000];
+        Arrays.setAll(array, i -> (int) (Math.random() * 1000));
+        int[] expected = array.clone();
+        Arrays.sort(expected);
+        Algorithm.bubbleSort(array);
+        assertArrayEquals(expected, array);
     }
-    // Test Fibonacci
+
+    // Test Fibonacci Calculation
     @Test
-    void testFibonacci() {
-        assertEquals(8, calculateFibonacci(6));
+    void testFibonacciWithPositiveNumber() {
+        assertEquals(8, Algorithm.fibonacciCalculate(6));
     }
+
     @Test
-    void testFibonacciZero() {
-        assertEquals(0, calculateFibonacci(0)); 
+    void testFibonacciWithZero() {
+        assertEquals(0, Algorithm.fibonacciCalculate(0));
     }
+
     @Test
-    void testFibonacciOne() {
-        assertEquals(1, calculateFibonacci(1)); 
-    }   
-    @Test
-    void testFibonacciLarge() {
-        assertEquals(832040, calculateFibonacci(30)); 
+    void testFibonacciWithOne() {
+        assertEquals(1, Algorithm.fibonacciCalculate(1));
     }
+
+    @Test
+    void testFibonacciWithLargeNumber() {
+        assertEquals(832040, Algorithm.fibonacciCalculate(30));
+    }
+
     @Test
     void testFibonacciWithNegativeNumber() {
-        assertThrows(IllegalArgumentException.class, () -> calculateFibonacci(-1));
+        assertThrows(IllegalArgumentException.class, () -> Algorithm.fibonacciCalculate(-1));
     }
-      
+
     // Test Prime Check
     @Test
-    void testIsPrime() {
-        assertTrue(isPrime(7));
+    void testIsPrimeWithPrimeNumber() {
+        assertTrue(Algorithm.isPrime(7));
     }
+
     @Test
-    void testPrimeCheckSmallestPrime() {
-        assertTrue(isPrime(2)); 
+    void testIsPrimeWithSmallestPrime() {
+        assertTrue(Algorithm.isPrime(2));
     }
+
     @Test
-    void testPrimeCheckNonPrime() {
-        assertFalse(isPrime(4)); 
+    void testIsPrimeWithNonPrimeNumber() {
+        assertFalse(Algorithm.isPrime(4));
     }
+
     @Test
-    void testPrimeCheckNegative() {
-        assertFalse(isPrime(-1)); 
+    void testIsPrimeWithNegativeNumber() {
+        assertFalse(Algorithm.isPrime(-1));
     }
-   
+
     @Test
-    void testPrimeCheckZero() {
-        assertFalse(isPrime(0)); 
+    void testIsPrimeWithZero() {
+        assertFalse(Algorithm.isPrime(0));
     }
+
     @Test
-    void testPrimeCheckWithLargeNumber() {
-        assertTrue(isPrime(9999991)); 
+    void testIsPrimeWithLargePrimeNumber() {
+        assertTrue(Algorithm.isPrime(9999991));
     }
 }
